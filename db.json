@@ -1,0 +1,17 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1625682648539-IXH5B3VA3OXIFENJVTNB/STEPHLARSEN_Kristina_006_17.jpg?format=500w"
+    },
+    {
+      "id": 2,
+      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1625682265329-MRDL6AUYC2370IIPO9FA/STEPHLARSEN_Kristina_001_2.jpg?format=500w"
+    },
+    {
+      "id": 3,
+      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1625681204818-35EN65B8ZMURGEHADAOX/STEPHLARSEN_Kristina_005_16_2.jpg?format=500w"
+    }
+  ],
+  "imageOrder": [1, 2, 3]
+}
