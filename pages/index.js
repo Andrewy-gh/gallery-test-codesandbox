@@ -14,7 +14,7 @@ function Gallery({ images }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3001/images"); // Replace with your JSON server endpoint
+  const res = await fetch('http://localhost:3001/images'); // Replace with your JSON server endpoint
   const data = await res.json();
 
   return {

@@ -11,7 +11,17 @@
     {
       "id": 3,
       "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1625681204818-35EN65B8ZMURGEHADAOX/STEPHLARSEN_Kristina_005_16_2.jpg?format=500w"
+    },
+    {
+      "id": 4,
+      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1664148194609-D9DZ6RBV2M2MVZY4J61K/dune-camille-aquamarine-beaded-necklace-22-1269-optimized.jpeg?format=750w" 
+    },
+    {
+      "id": 5,
+      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/b5b44d76-8de2-4acb-ae31-f06a51c0908c/Screen+Shot+2022-04-17+at+9.47.02+AM.jpg?format=750w"
+    },
+    {"id": 6,
+    "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/ee4c8aaf-3ea3-41ab-9e27-f53811c41fcf/UNADJUSTEDNONRAW_thumb_8615.jpg?format=750w"
     }
-  ],
-  "imageOrder": [1, 2, 3]
+  ]
 }
