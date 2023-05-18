@@ -1,27 +1,89 @@
 {
-  "images": [
-    {
-      "id": 1,
-      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1625682648539-IXH5B3VA3OXIFENJVTNB/STEPHLARSEN_Kristina_006_17.jpg?format=500w"
-    },
-    {
-      "id": 2,
-      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1625682265329-MRDL6AUYC2370IIPO9FA/STEPHLARSEN_Kristina_001_2.jpg?format=500w"
-    },
-    {
-      "id": 3,
-      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1625681204818-35EN65B8ZMURGEHADAOX/STEPHLARSEN_Kristina_005_16_2.jpg?format=500w"
-    },
-    {
-      "id": 4,
-      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/1664148194609-D9DZ6RBV2M2MVZY4J61K/dune-camille-aquamarine-beaded-necklace-22-1269-optimized.jpeg?format=750w" 
-    },
-    {
-      "id": 5,
-      "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/b5b44d76-8de2-4acb-ae31-f06a51c0908c/Screen+Shot+2022-04-17+at+9.47.02+AM.jpg?format=750w"
-    },
-    {"id": 6,
-    "url": "https://images.squarespace-cdn.com/content/v1/567394c8df40f3fd5f592ad1/ee4c8aaf-3ea3-41ab-9e27-f53811c41fcf/UNADJUSTEDNONRAW_thumb_8615.jpg?format=750w"
-    }
-  ]
+  "data": {
+    "images": [
+      {
+        "id": 1,
+        "url": "https://placehold.jp/80ff00/000000/150x150.png?text=project%201-%20type%201",
+        "project": "Project 1",
+        "type": "Type 1"
+      },
+      {
+        "id": 2,
+        "url": "https://placehold.jp/80ff00/000000/150x150.png?text=project%201-%20type%201",
+        "project": "Project 1",
+        "type": "Type 1"
+      },
+      {
+        "id": 3,
+        "url": "https://placehold.jp/80ff00/000000/150x150.png?text=project%201-%20type%201",
+        "project": "Project 1",
+        "type": "Type 1"
+      },
+      {
+        "id": 4,
+        "url": "https://placehold.jp/ff0000/000000/150x150.png?text=project%202%20-%20type%202",
+        "project": "Project 2",
+        "type": "Type 2"
+      },
+      {
+        "id": 5,
+        "url": "https://placehold.jp/ff0000/000000/150x150.png?text=project%202%20-%20type%202",
+        "project": "Project 2",
+        "type": "Type 2"
+      },
+      {
+        "id": 6,
+        "url": "https://placehold.jp/ff0000/000000/150x150.png?text=project%202%20-%20type%202",
+        "project": "Project 2",
+        "type": "Type 2"
+      },
+      {
+        "id": 7,
+        "url": "https://placehold.jp/80ff00/000000/150x150.png?text=project%203%20-%20type%201",
+        "project": "Project 3",
+        "type": "Type 1"
+      },
+      {
+        "id": 8,
+        "url": "https://placehold.jp/80ff00/000000/150x150.png?text=project%203%20-%20type%201",
+        "project": "Project 3",
+        "type": "Type 1"
+      },
+      {
+        "id": 9,
+        "url": "https://placehold.jp/80ff00/000000/150x150.png?text=project%203%20-%20type%201",
+        "project": "Project 3",
+        "type": "Type 1"
+      }
+    ],
+    "projects": [
+      {
+        "id": 1,
+        "name": "Project 1",
+        "imageIds": [1, 2, 3]
+      },
+      {
+        "id": 2,
+        "name": "Project 2",
+        "imageIds": [4, 5, 6]
+      },
+      {
+        "id": 3,
+        "name": "Project 3",
+        "imageIds": [7, 8, 9]
+      }
+    ],
+    "types": [
+      {
+        "id": 1,
+        "name": "Portfolio",
+        "projectIds": [1, 3]
+      },
+      {
+        "id": 2,
+        "name": "Editorial",
+        "projectIds": [2]
+      }
+    ]
+  }
 }
