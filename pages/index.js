@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import Link from 'next/link';
 
 export default function ImageGalleryPage({ data }) {
   if (!data) {
@@ -26,29 +26,6 @@ export default function ImageGalleryPage({ data }) {
     }),
   }));
 
-  // [
-  //   { id: 1, name: 'Portfolio', projects: [ [Object], [Object] ] },
-  //   { id: 2, name: 'Editorial', projects: [ [Object] ] }
-  // ]
-  // {
-  //   id: 1,
-  //   name: 'Project 1',
-  //   images: [
-  //     {
-  //       id: 1,
-  //       url: 'https://placehold.jp/80ff00/000000/150x150.png?text=project%201-%20type%201'
-  //     },
-  //     {
-  //       id: 2,
-  //       url: 'https://placehold.jp/80ff00/000000/150x150.png?text=project%201-%20type%201'
-  //     },
-  //     {
-  //       id: 3,
-  //       url: 'https://placehold.jp/80ff00/000000/150x150.png?text=project%201-%20type%201'
-  //     }
-  //   ]
-  // }
-
   return (
     <div>
       <h1>Image Gallery</h1>
@@ -67,30 +44,107 @@ export default function ImageGalleryPage({ data }) {
         </div>
       </div>
 
+      <div className="group relative w-96">
+        <img
+          className="w-full object-cover"
+          src="https://plchldr.co/i/520x190?bg=3D8EB9"
+        />
+        {/* <div className="absolute inset-0 bg-black opacity-0 hover:opacity-75 transition-opacity duration-300">
+          <div
+            className="flex items-center justify-center 
+                    h-full
+                    "
+          >
+            <p className="text-white text-lg font-bold">{project.name}</p>
+          </div>
+        </div> */}
+        {/* TESTING  */}
+        <div className="absolute top-0 left-0 w-full h-0  bg-black opacity-0 group-hover:h-full group-hover:opacity-75 duration-300">
+          <div
+            className="flex flex-col items-center justify-center 
+                    h-full
+                    "
+          >
+            <p className="text-white text-lg font-bold"> Continue Shopping</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="group relative w-96">
+        <img
+          className="w-full object-cover"
+          src="https://plchldr.co/i/245x155?bg=EB6361"
+        />
+        <div className="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-indigo-700 opacity-0 group-hover:h-full group-hover:opacity-100 duration-500">
+          Continue Shopping
+        </div>
+      </div>
+
       <div>
         {result.map((type) => (
           <>
             <div>{type.name}</div>
+
             {type.projects.map(
               (project) => (
-                <div className="relative h-64 w-64">
-                  <img
-                    src={project.images[0].url}
-                    alt="Your Image"
-                    className="w-full h-auto"
-                  />
-                  <div className="absolute inset-0 bg-black opacity-0 hover:opacity-75 transition-opacity duration-300">
-                    <div
-                      className="flex items-center justify-center 
+                <Link href={`/projects/${project.id}`}>
+                  {/* <div className="group relative w-96">
+                    <img
+                      className="w-full object-cover"
+                      src="https://plchldr.co/i/520x190?bg=3D8EB9"
+                    />
+                    <div className="absolute top-0 left-0 w-full h-0  bg-black opacity-0 group-hover:h-full group-hover:opacity-75 transition-opacity duration-300">
+                      <div
+                        className="flex flex-col items-center justify-center 
+                          h-full
+                          "
+                      >
+                        <p className="text-white text-lg font-bold">
+                          {' '}
+                          Continue Shopping
+                        </p>
+                      </div>
+                    </div>
+                  </div> */}
+                  <div className="group relative w-96">
+                    <img
+                      src={project.images[0].url}
+                      alt="Your Image"
+                      className="w-full object-cover"
+                    />
+                    <div className="absolute top-0 left-0 w-full h-0 bg-black opacity-0 group-hover:h-full group-hover:opacity-75 transition-opacity duration-300">
+                      <div
+                        className="flex items-center justify-center 
                     h-full
                     "
-                    >
-                      <p className="text-white text-lg font-bold">
-                        {project.name}
-                      </p>
+                      >
+                        <p className="text-white text-lg font-bold">
+                          {project.name}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
+                // <Link href={`/projects/${project.id}`}>
+                //   <div className="relative h-64 w-64">
+                //     <img
+                //       src={project.images[0].url}
+                //       alt="Your Image"
+                //       className="w-full h-auto"
+                //     />
+                //     <div className="absolute inset-0 bg-black opacity-0 hover:opacity-75 transition-opacity duration-300">
+                //       <div
+                //         className="flex items-center justify-center
+                //     h-full
+                //     "
+                //       >
+                //         <p className="text-white text-lg font-bold">
+                //           {project.name}
+                //         </p>
+                //       </div>
+                //     </div>
+                //   </div>
+                // </Link>
               )
               // project.images.map((image) => (
               //   <div>
@@ -113,7 +167,7 @@ export default function ImageGalleryPage({ data }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3001/data"); // Replace with your JSON server endpoint
+  const res = await fetch('http://localhost:3001/data'); // Replace with your JSON server endpoint
   const data = await res.json();
   if (!data) {
     return {
