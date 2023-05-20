@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function ImageGalleryPage({ data }) {
   if (!data) {
@@ -29,6 +29,35 @@ export default function ImageGalleryPage({ data }) {
   return (
     <div>
       <h1>Image Gallery</h1>
+
+      <div className="group w-full max-w-lg h-64 rounded-lg shadow-2xl overflow-hidden relative">
+        <img
+          className="absolute inset-0 h-full w-full object-cover"
+          src="https://placehold.jp/800080/ffffff/150x300.png"
+        />
+        <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-75 transition-opacity"></div>
+        <div className="flex h-full items-center justify-center relative">
+          <h1 className="text-3xl text-teal-100 text-opacity-0 group-hover:text-opacity-100 transition-opacity tracking-wider">
+            {" "}
+            Your adventure starts here
+          </h1>
+        </div>
+      </div>
+
+      {/* Example 2 */}
+      <div className="group relative w-96">
+        <img
+          className="w-full object-cover"
+          src="https://plchldr.co/i/520x190?bg=3D8EB9"
+        />
+        <div className="absolute top-0 left-0 w-full h-0  bg-black opacity-0 group-hover:h-full group-hover:opacity-75 duration-300">
+          <div className="flex flex-col items-center justify-center h-full">
+            <p className="text-white text-lg font-bold"> Continue Shopping</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Example 1 */}
       <div className="h-64 w-64">
         <div className="relative">
           <img
@@ -47,32 +76,6 @@ export default function ImageGalleryPage({ data }) {
       <div className="group relative w-96">
         <img
           className="w-full object-cover"
-          src="https://plchldr.co/i/520x190?bg=3D8EB9"
-        />
-        {/* <div className="absolute inset-0 bg-black opacity-0 hover:opacity-75 transition-opacity duration-300">
-          <div
-            className="flex items-center justify-center 
-                    h-full
-                    "
-          >
-            <p className="text-white text-lg font-bold">{project.name}</p>
-          </div>
-        </div> */}
-        {/* TESTING  */}
-        <div className="absolute top-0 left-0 w-full h-0  bg-black opacity-0 group-hover:h-full group-hover:opacity-75 duration-300">
-          <div
-            className="flex flex-col items-center justify-center 
-                    h-full
-                    "
-          >
-            <p className="text-white text-lg font-bold"> Continue Shopping</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="group relative w-96">
-        <img
-          className="w-full object-cover"
           src="https://plchldr.co/i/245x155?bg=EB6361"
         />
         <div className="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-indigo-700 opacity-0 group-hover:h-full group-hover:opacity-100 duration-500">
@@ -84,47 +87,41 @@ export default function ImageGalleryPage({ data }) {
         {result.map((type) => (
           <>
             <div>{type.name}</div>
+            {/* <div className="group w-full max-w-lg h-64 rounded-lg shadow-2xl overflow-hidden relative">
+              <img
+                className="absolute inset-0 h-full w-full object-cover"
+                src="https://placehold.jp/800080/ffffff/150x300.png"
+              />
+              <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-75 transition-opacity"></div>
+              <div className="flex h-full items-center justify-center relative">
+                <h1 className="text-3xl text-teal-100 text-opacity-0 group-hover:text-opacity-100 transition-opacity tracking-wider">
+                  {" "}
+                  Your adventure starts here
+                </h1>
+              </div>
+            </div> */}
 
-            {type.projects.map(
-              (project) => (
-                <Link href={`/projects/${project.id}`}>
-                  {/* <div className="group relative w-96">
-                    <img
-                      className="w-full object-cover"
-                      src="https://plchldr.co/i/520x190?bg=3D8EB9"
-                    />
-                    <div className="absolute top-0 left-0 w-full h-0  bg-black opacity-0 group-hover:h-full group-hover:opacity-75 transition-opacity duration-300">
-                      <div
-                        className="flex flex-col items-center justify-center 
-                          h-full
-                          "
-                      >
-                        <p className="text-white text-lg font-bold">
-                          {' '}
-                          Continue Shopping
-                        </p>
+            <div className="container mx-auto outline-double sm:columns-2 md:columns-3 lg:columns-4">
+              {type.projects.map((project) => (
+                <div className="mb-6" key={project.id}>
+                  <Link href={`/projects/${project.id}`}>
+                    <div className="group relative outline-double">
+                      {/* <div className="group max-w-lg h-64 relative"> */}
+                      <img
+                        src={project.images[0].url}
+                        alt="Your Image"
+                        className="w-full"
+                      />
+                      <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-75">
+                        <div className="flex items-center justify-center relative h-full">
+                          <p className="text-white text-lg font-bold text-opacity-0 group-hover:text-opacity-100 tracking-wider">
+                            {project.name}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div> */}
-                  <div className="group relative w-96">
-                    <img
-                      src={project.images[0].url}
-                      alt="Your Image"
-                      className="w-full object-cover"
-                    />
-                    <div className="absolute top-0 left-0 w-full h-0 bg-black opacity-0 group-hover:h-full group-hover:opacity-75 transition-opacity duration-300">
-                      <div
-                        className="flex items-center justify-center 
-                    h-full
-                    "
-                      >
-                        <p className="text-white text-lg font-bold">
-                          {project.name}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
                 // <Link href={`/projects/${project.id}`}>
                 //   <div className="relative h-64 w-64">
                 //     <img
@@ -145,29 +142,17 @@ export default function ImageGalleryPage({ data }) {
                 //     </div>
                 //   </div>
                 // </Link>
-              )
-              // project.images.map((image) => (
-              //   <div>
-              //     <img src={image.url} />
-              //   </div>
-              // ))
-            )}
+              ))}
+            </div>
           </>
         ))}
       </div>
-      {/* <ul>
-        {result.map((image) => (
-          <li key={image.id}>
-            <img src={image.url} alt={image.id} />
-          </li>
-        ))}
-      </ul> */}
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:3001/data'); // Replace with your JSON server endpoint
+  const res = await fetch("http://localhost:3001/data"); // Replace with your JSON server endpoint
   const data = await res.json();
   if (!data) {
     return {
